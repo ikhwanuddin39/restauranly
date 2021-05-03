@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Restaurantly Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
+    <!-- axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+    <style>
+        .show_firstpage {
+            display: block;
+        }
+        
+        .none_firstpage {
+            display: none;
+        }
+        
+        .show_secondpage {
+            display: block;
+        }
+        
+        .none_secondpage {
+            display: none;
+        }
+        
+        .show_thirdpage {
+            display: block;
+        }
+        
+        .none_thirdpage {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ======= Top Bar ======= -->
+    <div id="topbar" class="d-flex align-items-center fixed-top">
+        <div class="container d-flex justify-content-center justify-content-md-between">
+
+            <div class="contact-info d-flex align-items-center">
+                <i class="bi bi-phone d-flex align-items-center"><span>+62-822-5548-8855</span></i>
+                <i class="bi bi-clock d-flex align-items-center ms-4"><span> Senin-Sabtu : 10.00 - 22.00</span></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-cente">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-lg-between">
+
+            <h1 class="logo me-auto me-lg-0"><a href="index.html">Restaurantly</a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+
+            <nav id="navbar" class="navbar order-last order-lg-0 ">
+                <ul>
+                    <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="#why_uss">Why Us</a></li>
+                    <li><a class="nav-link scrollto" href="#menu">Menu</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+
+
+        </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- ======= Hero Section ======= -->
+    <section id="hero" class="d-flex align-items-center">
+        <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>Welcome to <span>Restaurantly</span></h1>
+                    <h2>Delivering great food for more than 18 years!</h2>
+
+                    <div class="btns">
+                        <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- End Hero -->
+
+    <main id="main">
+
+        <!-- ======= Why Us Section ======= -->
+        <section id="why_uss" class="why-us">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Why Us</h2>
+                    <p>Why Choose Our Restaurant</p>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-4" v-for="isi_why in why">
+                        <div class="box" data-aos="zoom-in" data-aos-delay="100">
+                            <span>{{isi_why.no}}</span>
+                            <h4>{{isi_why.judul}}</h4>
+                            <p>{{isi_why.deskripsi}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Why Us Section -->
+
+        <!-- ======= Menu Section ======= -->
+        <section id="menu" class="menu section-bg">
+            <div class="container" data-aos="fade-up">
+
+                <div class="section-title">
+                    <h2>Menu</h2>
+                    <p>Check Our Tasty Menu</p>
+                </div>
+
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <div class="button text-center ">
+                            <button v-on:click="appetizercall()" type="button" class="btn btn-outline-warning">appetizer</button>
+                            <button v-on:click="maincoursecall()" type="button" class="btn btn-outline-warning">main course</button>
+                            <button v-on:click="dessertcall()" type="button" class="btn btn-outline-warning">dessert</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div :class="style_firstpage" id="firstpage">
+                    <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-lg-6 menu-item " v-for="isi_menu in appetizer">
+                            <img :src="isi_menu.gambar" class="menu-img" height="70px" width="70px" alt=""><img>
+                            <div class="menu-content">
+                                <a href="#">{{isi_menu.nama}}</a><span>{{isi_menu.harga}}</span>
+                            </div>
+                            <div class="menu-ingredients">
+                                {{isi_menu.deskripsi}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div :class="style_secondpage" id="secondpage">
+                    <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-lg-6 menu-item " v-for="isi_menu in maincourse">
+                            <img :src="isi_menu.gambar" class="menu-img" height="70px" width="70px" alt=""><img>
+                            <div class="menu-content">
+                                <a href="#">{{isi_menu.nama}}</a><span>{{isi_menu.harga}}</span>
+                            </div>
+                            <div class="menu-ingredients">
+                                {{isi_menu.deskripsi}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div :class="style_thirdpage" id="thirdpage">
+                    <div class="row menu-container" data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-lg-6 menu-item " v-for="isi_menu in dessert">
+                            <img :src="isi_menu.gambar" class="menu-img" height="70px" width="70px" alt=""><img>
+                            <div class="menu-content">
+                                <a href="#">{{isi_menu.nama}}</a><span>{{isi_menu.harga}}</span>
+                            </div>
+                            <div class="menu-ingredients">
+                                {{isi_menu.deskripsi}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- End Menu Section -->
+
+    </main>
+    <!-- End #main -->
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Restaurantly</span></strong>. All Rights Reserved
+
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <div id="preloader"></div>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <!-- script mongo -->
+    <script>
+        // why
+        var vm = new Vue({
+                el: '#why_uss',
+                data: {
+                    why: []
+                },
+                methods: {
+                    upDate_why: function() {
+                        axios.get('http://localhost:5000/api/GETwhy').then(response => this.why = response.data);
+                    }
+                },
+                mounted() {
+                    axios.get('http://localhost:5000/api/GETwhy').then(response => this.why = response.data);
+                    this.upDate_why();
+                    this.timer = setInterval(this.upDate_why, 1000)
+                }
+            })
+            // menu
+        var vm2 = new Vue({
+            el: '#menu',
+            data: {
+                appetizer: [],
+                maincourse: [],
+                dessert: [],
+
+                style_firstpage: 'show_firstpage',
+                style_secondpage: 'none_secondpage',
+                style_thirdpage: 'none_thirdpage'
+
+
+            },
+            methods: {
+
+                appetizercall: function() {
+                    this.style_firstpage = 'show_firstpage';
+                    this.style_secondpage = 'none_secondpage';
+                    this.style_thirdpage = 'none_thirdpage';
+                },
+                maincoursecall: function() {
+                    this.style_firstpage = 'none_firstpage';
+                    this.style_secondpage = 'show_secondpage';
+                    this.style_thirdpage = 'none_thirdpage';
+                },
+                dessertcall: function() {
+                    this.style_firstpage = 'none_firstpage';
+                    this.style_secondpage = 'none_secondpage';
+                    this.style_thirdpage = 'show_thirdpage';
+                },
+
+
+                upDate_appetizer: function() {
+                    axios.get('http://localhost:5000/api/GETappetizer').then(response => this.appetizer = response.data);
+                },
+                upDate_maincourse: function() {
+                    axios.get('http://localhost:5000/api/GETmaincourse').then(response => this.maincourse = response.data);
+                },
+                upDate_dessert: function() {
+                    axios.get('http://localhost:5000/api/GETdessert').then(response => this.dessert = response.data);
+                }
+
+            },
+            mounted() {
+                axios.get('http://localhost:5000/api/GETappetizer').then(response => this.appetizer = response.data);
+                this.upDate_appetizer();
+                this.timer = setInterval(this.upDate_appetizer, 1000)
+
+                axios.get('http://localhost:5000/api/GETmaincourse').then(response => this.maincourse = response.data);
+                this.upDate_maincourse();
+                this.timer = setInterval(this.upDate_maincourse, 1000)
+
+                axios.get('http://localhost:5000/api/GETdessert').then(response => this.dessert = response.data);
+                this.upDate_dessert();
+                this.timer = setInterval(this.upDate_dessert, 1000)
+            }
+        })
+    </script>
+    <!-- akhir script mongo -->
+
+</body>
+
+</html>
